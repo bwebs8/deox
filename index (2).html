@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="de OX Salon de Beauté — Premium salon in Pattambi, Kerala. Luxury haircuts, beard grooming, hydra facials & groom makeup. Call 9846129447.">
+    <title>de OX Salon de Beauté | Pattambi, Kerala</title>
+    <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0a0a0a',
+                        'noir-2': '#111111',
+                        'noir-3': '#181818',
+                        gold: '#c9a84c',
+                        'gold-l': '#e2c76a',
+                        'gold-d': '#a68a3a',
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        
+        ::-webkit-scrollbar{width:5px}
+        ::-webkit-scrollbar-track{background:#0a0a0a}
+        ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#c9a84c,#a68a3a);border-radius:10px}
+
+        /* ===== LOADING SCREEN - ELEGANT & SIMPLE ===== */
+        #loader{position:fixed;inset:0;z-index:99999;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s ease,visibility .8s ease}
+        #loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+        
+        .loader-logo-wrap{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));display:flex;align-items:center;justify-content:center;animation:logoSubtle 2s ease-in-out infinite;box-shadow:0 0 40px rgba(201,168,76,.15)}
+        .loader-logo-wrap img{width:70px;height:70px;border-radius:50%;object-fit:cover}
+        
+        @keyframes logoSubtle{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+        
+        .loader-bar-wrap{width:180px;margin-top:35px}
+        .loader-bar{width:100%;height:2px;background:#1a1a1a;border-radius:10px;overflow:hidden}
+        .loader-bar-fill{height:100%;width:0;background:linear-gradient(90deg,#c9a84c,#e2c76a);animation:loadBar 1.8s ease forwards}
+        @keyframes loadBar{0%{width:0}100%{width:100%}}
+        
+        .loader-text{margin-top:16px;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+
+        /* ===== LOGO ===== */
+        .logo-img{display:block;object-fit:contain}
+        .logo-nav{height:38px;width:auto}
+        .logo-footer{height:46px;width:auto}
+        .logo-panel{height:72px;width:auto}
+        .logo-hero-text{height:50px;width:auto;opacity:.7}
+
+        /* Logo Circle Container */
+        .logo-circle{width:44px;height:44px;border-radius:50%;padding:4px;background:linear-gradient(135deg,rgba(201,168,76,.15),transparent);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+        .logo-circle:hover{transform:scale(1.05);border-color:rgba(201,168,76,.35)}
+        .logo-circle img{width:100%;height:100%;border-radius:50%}
+
+        /* ===== NAV ===== */
+        #nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s ease}
+        #nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);box-shadow:0 4px 25px rgba(0,0,0,.3)}
+        .nav-link{position:relative;text-decoration:none}
+        .nav-link::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:0;height:1.5px;background:linear-gradient(90deg,#c9a84c,#e2c76a);transition:width .3s ease}
+        .nav-link:hover::after,.nav-link.active::after{width:100%}
+        .nav-link.active{color:#c9a84c}
+
+        /* ===== MARQUEE ===== */
+        .marquee-wrapper{overflow:hidden;position:relative}
+        .marquee-wrapper::before,.marquee-wrapper::after{content:'';position:absolute;top:0;width:100px;height:100%;z-index:2}
+        .marquee-wrapper::before{left:0;background:linear-gradient(90deg,#0a0a0a,transparent)}
+        .marquee-wrapper::after{right:0;background:linear-gradient(-90deg,#0a0a0a,transparent)}
+        .marquee-track{display:flex;animation:marquee 35s linear infinite;width:max-content}
+        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+        /* ===== HERO ===== */
+        .hero-section{position:relative;min-height:100vh;display:flex;align-items:end;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;z-index:0}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:brightness(.45) contrast(1.12);transition:transform 8s ease}
+        .hero-section:hover .hero-bg img{transform:scale(1.03)}
+        .hero-gradient{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.4) 40%,rgba(10,10,10,.78) 72%,#0a0a0a 100%);pointer-events:none}
+        .hero-text-reveal{opacity:0;transform:translateY(35px);animation:heroReveal .9s ease forwards}
+        .hero-text-reveal:nth-child(1){animation-delay:.08s}
+        .hero-text-reveal:nth-child(2){animation-delay:.2s}
+        .hero-text-reveal:nth-child(3){animation-delay:.35s}
+        .hero-text-reveal:nth-child(4){animation-delay:.5s}
+        .hero-text-reveal:nth-child(5){animation-delay:.65s}
+        @keyframes heroReveal{to{opacity:1;transform:translateY(0)}}
+        .hero-badge{display:inline-flex;align-items:center gap:12px;padding:8px 20px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.16);border-radius:50px}
+
+        /* ===== SERVICE CARDS ===== */
+        .service-scroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:18px;scrollbar-width:none}
+        .service-scroll::-webkit-scrollbar{display:none}
+        .service-card{scroll-snap-align:start;flex-shrink:0;width:320px;height:420px;position:relative;overflow:hidden;border-radius:18px;cursor:pointer;transition:all .4s ease;border:1px solid rgba(255,255,255,.04)}
+        .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 30px rgba(201,168,76,.06)}
+        .service-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+        .service-card:hover img{transform:scale(1.08);filter:brightness(.42)}
+        .service-card-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(10,10,10,.7) 70%,rgba(10,10,10,.97) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:background .4s ease}
+        .service-card:hover .service-card-overlay{background:linear-gradient(180deg,rgba(201,168,76,.03) 0%,rgba(10,10,10,.92) 50%,rgba(10,10,10,.99) 100%)}
+        .service-card-tag{display:inline-block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#c9a84c;font-weight:600;padding:4px 12px;background:rgba(201,168,76,.12);border-radius:18px;margin-bottom:10px}
+        .service-card-line{width:0;height:2px;background:linear-gradient(90deg,#c9a84c,#e2c76a);transition:width .5s ease;margin-top:12px}
+        .service-card:hover .service-card-line{width:55px}
+        @media(min-width:768px){.service-card{width:370px;height:450px}}
+
+        /* ===== TESTIMONIALS ===== */
+        .testi-item{position:absolute;inset:0;opacity:0;transition:all .7s ease;pointer-events:none;transform:translateX(25px)}
+        .testi-item.active{opacity:1;pointer-events:auto;transform:translateX(0)}
+
+        /* ===== GALLERY ===== */
+        .gal-item{position:relative;overflow:hidden;border-radius:14px;cursor:pointer;transition:all .4s ease;border:1px solid rgba(255,255,255,.03)}
+        .gal-item:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.4)}
+        .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+        .gal-item:hover img{transform:scale(1.06)}
+        .gal-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(10,10,10,.75) 100%);opacity:0;transition:opacity .4s ease}
+        .gal-item:hover::after{opacity:1}
+        .gal-label{position:absolute;bottom:14px;left:14px;z-index:2;opacity:0;transform:translateY(8px);transition:all .4s ease;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#c9a84c;font-weight:500;padding:5px 13px;background:rgba(10,10,10,.8);border-radius:20px}
+        .gal-item:hover .gal-label{opacity:1;transform:translateY(0)}
+
+        /* ===== FORM ===== */
+        .form-field{position:relative}
+        .form-field input,.form-field select{width:100%;background:rgba(17,17,17,.85);border:1.5px solid rgba(255,255,255,.07);border-radius:14px;padding:20px 22px 10px;color:#fff;font-family:'Inter',sans-serif;font-size:14px;transition:all .3s ease;appearance:none;-webkit-appearance:none}
+        .form-field input:hover,.form-field select:hover{border-color:rgba(255,255,255,.12)}
+        .form-field input:focus,.form-field select:focus{outline:none;border-color:rgba(201,168,76,.45);box-shadow:0 0 0 4px rgba(201,168,76,.08)}
+        .form-field label{position:absolute;left:22px;top:17px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);transition:all .3s ease;pointer-events:none}
+        .form-field input:focus+label,.form-field input:not(:placeholder-shown)+label,.form-field select:focus+label{top:7px;font-size:9px;color:#c9a84c}
+        .form-field.error input,.form-field.error select{border-color:rgba(239,68,68,.45);box-shadow:0 0 0 4px rgba(239,68,68,.06)}
+        .form-field.error label{color:#ef4444}
+        .error-message{position:absolute;bottom:-18px;left:22px;font-size:10px;color:#ef4444;opacity:0;transform:translateY(-4px);transition:all .3s ease}
+        .form-field.error .error-message{opacity:1;transform:translateY(0)}
+        @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+        .shake{animation:shake .4s ease}
+
+        /* ===== BUTTONS - PROPER THICKNESS ===== */
+        .btn-fill{background:linear-gradient(135deg,#c9a84c,#e2c76a);color:#0a0a0a;position:relative;overflow:hidden;transition:all .35s ease;box-shadow:0 4px 20px rgba(201,168,76,.28);font-weight:700;letter-spacing:.06em;padding:14px 28px !important;border-radius:12px !important;font-size:12px !important}
+        .btn-fill::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transition:left .5s ease}
+        .btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.4)}
+        .btn-fill:hover::before{left:100%}
+        .btn-fill:active{transform:translateY(0) scale(.98)}
+        .btn-fill span{position:relative;z-index:1}
+        
+        .btn-ghost{border:1.5px solid rgba(201,168,76,.35);color:#c9a84c;transition:all .35s ease;padding:14px 28px !important;border-radius:12px !important;font-size:12px !important;font-weight:500}
+        .btn-ghost::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.08),transparent);opacity:0;transition:opacity .3s ease}
+        .btn-ghost:hover{border-color:rgba(201,168,76,.55);transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,.12)}
+        .btn-ghost:hover::before{opacity:1}
+        .btn-ghost:active{transform:translateY(0) scale(.98)}
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .wa-float{position:fixed;bottom:26px;right:26px;z-index:999;width:56px;height:56px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .35s ease;box-shadow:0 6px 25px rgba(37,211,102,.35)}
+        .wa-float:hover{transform:scale(1.08) translateY(-3px);box-shadow:0 10px 35px rgba(37,211,102,.45)}
+        .wa-float svg{width:27px;height:27px;color:white;transition:transform .3s ease}
+        .wa-float:hover svg{transform:rotate(-10deg) scale(1.08)}
+        .wa-tooltip{position:absolute;right:66px;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.95);color:#fff;padding:10px 17px;border-radius:10px;font-size:12px;font-weight:500;white-space:nowrap;opacity:0;visibility:hidden;transition:all .3s ease;box-shadow:0 8px 25px rgba(0,0,0,.3)}
+        .wa-tooltip::after{content:'';position:absolute;right:-8px;top:50%;transform:translateY(-50%) rotate(45deg);width:14px;height:14px;background:rgba(17,17,17,.95)}
+        .wa-float:hover .wa-tooltip{opacity:1;visibility:visible;transform:translateY(-50%) translateX(-4px)}
+
+        #backTop{position:fixed;bottom:96px;right:26px;z-index:90;width:44px;height:44px;border-radius:50%;background:rgba(24,24,24,.9);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .35s ease;cursor:pointer}
+        #backTop.show{opacity:1;visibility:visible}
+        #backTop:hover{border-color:rgba(201,168,76,.35);background:rgba(201,168,76,.1)}
+
+        .gold-text{background:linear-gradient(135deg,#c9a84c,#e2c76a,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .section-separator{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.15),transparent);margin:0 auto;max-width:80%}
+        .info-card{transition:all .35s ease;border:1px solid rgba(255,255,255,.05)}
+        .info-card:hover{transform:translateX(6px);border-color:rgba(201,168,76,.15)}
+        .trust-icon{transition:all .35s ease}
+        .info-card:hover .trust-icon{transform:scale(1.12);color:#e2c76a !important}
+        .stat-number{display:inline-block;transition:transform .3s ease}
+        .stat-number:hover{transform:scale(1.08)}
+        .mob-link{transition:all .3s ease}
+        .mob-link:hover{transform:translateX(10px);color:#e2c76a !important}
+        #progressBar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#c9a84c,#e2c76a);z-index:10001;transition:width .1s linear;box-shadow:0 0 10px rgba(201,168,76,.4)}
+        @keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes fadeOut{from{opacity:1}to{opacity:0;transform:translateY(-8px)}}
+    </style>
+</head>
+<body>
+
+<div id="progressBar" style="width:0%"></div>
+
+<!-- ===== LOADING SCREEN ===== -->
+<div id="loader">
+    <div class="loader-logo-wrap">
+        <img src="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2" alt="de OX">
+    </div>
+    <div class="loader-bar-wrap">
+        <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    </div>
+    <div class="loader-text">your beauty zone</div>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="nav">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 flex items-center justify-between h-[74px]">
+        <a href="#" class="logo-circle flex-shrink-0">
+            <img src="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2" alt="de OX" class="logo-img logo-nav">
+        </a>
+        <div class="hidden lg:flex items-center gap-9">
+            <a href="#about" class="nav-link text-[13px] text-white/50 hover:text-white transition-colors font-light tracking-wide">About</a>
+            <a href="#services" class="nav-link text-[13px] text-white/50 hover:text-white transition-colors font-light tracking-wide">Services</a>
+            <a href="#gallery" class="nav-link text-[13px] text-white/50 hover:text-white transition-colors font-light tracking-wide">Gallery</a>
+            <a href="#reviews" class="nav-link text-[13px] text-white/50 hover:text-white transition-colors font-light tracking-wide">Reviews</a>
+            <a href="#contact" class="nav-link text-[13px] text-white/50 hover:text-white transition-colors font-light tracking-wide">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="#book" class="hidden sm:inline-flex btn-fill rounded-xl uppercase"><span>Book Now</span></a>
+            <button id="menuBtn" class="lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-[5px] rounded-full border border-white/10 hover:border-gold/30 transition-all duration-300" aria-label="Menu">
+                <span class="menu-line w-5 h-[1.2px] bg-white transition-all duration-300 origin-center"></span>
+                <span class="menu-line w-5 h-[1.2px] bg-gold transition-all duration-300"></span>
+                <span class="menu-line w-3.5 h-[1.2px] bg-white transition-all duration-300 origin-center"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobilePanel" class="fixed inset-0 z-[99] pointer-events-none opacity-0 transition-opacity duration-400">
+    <div class="absolute inset-0 bg-noir/[96] backdrop-blur-xl"></div>
+    <div class="relative h-full flex flex-col items-center justify-center gap-7 px-8">
+        <div class="logo-circle mb-6">
+            <img src="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2" alt="de OX" class="logo-img logo-panel">
+        </div>
+        <a href="#about" class="mob-link font-display text-3xl text-white/70 hover:text-gold transition-colors">About</a>
+        <a href="#services" class="mob-link font-display text-3xl text-white/70 hover:text-gold transition-colors">Services</a>
+        <a href="#gallery" class="mob-link font-display text-3xl text-white/70 hover:text-gold transition-colors">Gallery</a>
+        <a href="#reviews" class="mob-link font-display text-3xl text-white/70 hover:text-gold transition-colors">Reviews</a>
+        <a href="#contact" class="mob-link font-display text-3xl text-white/70 hover:text-gold transition-colors">Contact</a>
+        <a href="#book" class="mob-link btn-fill px-11 py-3.5 rounded-xl text-sm uppercase mt-4"><span>Book Appointment</span></a>
+    </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-section pb-16 sm:pb-20 md:pb-28 overflow-hidden">
+    <div class="hero-bg">
+        <img src="https://z-cdn-media.chatglm.cn/files/81e7a6a2-94e9-44b0-b4ca-473b62a34201.jpg?auth_key=1875710830-4e6aea19374d403b82084e6d67d68bbe-0-c5737eb9c595bfd1ac77159dc5d12bff" alt="de OX Salon Interior">
+    </div>
+    <div class="hero-gradient"></div>
+    <div class="relative z-10 max-w-[1400px] mx-auto px-5 lg:px-10 w-full">
+        <div class="max-w-3xl pb-12 md:pb-16">
+            <div class="hero-text-reveal mb-6">
+                <div class="hero-badge">
+                    <div class="w-2 h-2 bg-gold rounded-full animate-pulse"></div>
+                    <span class="text-[10px] tracking-[.28em] uppercase text-gold/80 font-medium">Pattambi's Premium Salon</span>
+                </div>
+            </div>
+            <div class="hero-text-reveal mb-5">
+                <img src="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2" alt="de OX" class="logo-img logo-hero-text">
+            </div>
+            <p class="hero-text-reveal text-white/42 text-[15px] font-light leading-relaxed max-w-md mb-9">Redefining style, grooming & beauty — one client at a time.</p>
+            <div class="hero-text-reveal flex flex-wrap gap-4">
+                <a href="#book" class="btn-fill rounded-xl inline-flex items-center gap-2 group"><span>Book Appointment</span><svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="#services" class="btn-ghost rounded-xl">Our Services</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40 animate-bounce">
+        <span class="text-[9px] tracking-widest uppercase text-white/40">Scroll</span>
+        <svg class="w-4 h-4 text-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-wrapper border-y border-white/[.04] py-4">
+    <div class="marquee-track">
+        <span class="flex items-center gap-8 px-4 text-[11px] tracking-[.25em] uppercase text-white/15 font-medium">
+            <span>Haircut & Styling</span><span class="text-gold/30">◆</span><span>Beard Grooming</span><span class="text-gold/30">◆</span><span>Hydra Facial</span><span class="text-gold/30">◆</span><span>Groom Makeup</span><span class="text-gold/30">◆</span><span>Hair Treatments</span><span class="text-gold/30">◆</span><span>Skin Care</span><span class="text-gold/30">◆</span><span>Hair Colouring</span><span class="text-gold/30">◆</span><span>Manicure & Pedicure</span><span class="text-gold/30">◆</span>
+        </span>
+        <span class="flex items-center gap-8 px-4 text-[11px] tracking-[.25em] uppercase text-white/15 font-medium">
+            <span>Haircut & Styling</span><span class="text-gold/30">◆</span><span>Beard Grooming</span><span class="text-gold/30">◆</span><span>Hydra Facial</span><span class="text-gold/30">◆</span><span>Groom Makeup</span><span class="text-gold/30">◆</span><span>Hair Treatments</span><span class="text-gold/30">◆</span><span>Skin Care</span><span class="text-gold/30">◆</span><span>Hair Colouring</span><span class="text-gold/30">◆</span><span>Manicure & Pedicure</span><span class="text-gold/30">◆</span>
+        </span>
+    </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[450px] h-[450px] bg-gold/[.02] rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div class="lg:col-span-5 relative" data-aos="fade-right" data-aos-duration="900">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl shadow-black/30 group">
+                    <img src="https://z-cdn-media.chatglm.cn/files/8b9f0f6f-0f18-48b0-95ca-47885a968e10.png?auth_key=1875710830-0869832d968d4f3fbacd631d492b355d-0-a6b22e1c1719e686a6195266ce0a18aa" alt="Salon Interior" class="w-full h-[420px] lg:h-[520px] object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]">
+                </div>
+                <div class="absolute -bottom-5 -right-5 lg:-bottom-6 lg:-right-6 bg-noir-3 border border-white/[.06] rounded-xl p-5 shadow-xl">
+                    <span class="font-display text-3xl font-bold gold-text stat-number">3+</span>
+                    <span class="block text-[10px] text-white/40 tracking-wider uppercase mt-1">Years Experience</span>
+                </div>
+            </div>
+            <div class="lg:col-span-7" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+                <span class="text-[10px] tracking-[.28em] uppercase text-gold/70 font-medium">Our Story</span>
+                <h2 class="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight mt-3 mb-6">Where Luxury Meets<br><span class="italic gold-text">Precision</span></h2>
+                <p class="text-white/42 text-[14.5px] font-light leading-[1.85] mb-5">At <strong class="text-white/70 font-medium">de OX Salon de Beauté</strong>, we believe grooming is not just a service — it's an experience. Located opposite the Old KSRTC Bus Stand in Pattambi, Kerala, our salon has earned the trust of discerning clients who demand nothing less than perfection.</p>
+                <p class="text-white/42 text-[14.5px] font-light leading-[1.85] mb-9">Our team of skilled professionals combines international techniques with individual style understanding. From advanced Hydra Facials to specialized Groom Makeup, every detail matters — hygiene, premium products, and an unwavering commitment to making you feel exceptional.</p>
+                
+                <!-- Stats Grid - Fixed Values -->
+                <div class="grid grid-cols-3 gap-6 pt-7 border-t border-white/[.06]">
+                    <div>
+                        <span class="font-display text-2xl md:text-3xl font-bold gold-text stat-number block">5000+</span>
+                        <span class="block text-[10px] text-white/35 mt-1">Happy Clients</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl md:text-3xl font-bold gold-text stat-number block">3+</span>
+                        <span class="block text-[10px] text-white/35 mt-1">Expert Stylists</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl md:text-3xl font-bold gold-text stat-number block">4.9</span>
+                        <span class="block text-[10px] text-white/35 mt-1">Google Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="py-20 md:py-32">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12" data-aos="fade-up">
+            <div>
+                <span class="text-[10px] tracking-[.28em] uppercase text-gold/70 font-medium">What We Offer</span>
+                <h2 class="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight mt-3">Our <span class="italic gold-text">Services</span></h2>
+            </div>
+            <div class="flex gap-2">
+                <button id="servPrev" class="w-11 h-11 rounded-full border border-white/[.08] flex items-center justify-center hover:border-gold/30 transition-colors"><i data-lucide="arrow-left" class="w-4 h-4 text-white/40"></i></button>
+                <button id="servNext" class="w-11 h-11 rounded-full border border-white/[.08] flex items-center justify-center hover:border-gold/30 transition-colors"><i data-lucide="arrow-right" class="w-4 h-4 text-white/40"></i></button>
+            </div>
+        </div>
+
+        <div class="service-scroll" id="serviceScroll">
+            <!-- Service 1: Haircut & Styling -->
+            <div class="service-card">
+                <img src="https://z-cdn-media.chatglm.cn/files/81e7a6a2-94e9-44b0-b4ca-473b62a34201.jpg?auth_key=1875710830-4e6aea19374d403b82084e6d67d68bbe-0-c5737eb9c595bfd1ac77159dc5d12bff" alt="Haircut & Styling">
+                <div class="service-card-overlay">
+                    <span class="service-card-tag">Signature</span>
+                    <h3 class="font-display text-xl font-medium">Haircut & Styling</h3>
+                    <p class="text-white/40 text-[12.5px] font-light mt-2 leading-relaxed">Precision cuts tailored to your face shape, lifestyle & personal style.</p>
+                    <div class="service-card-line"></div>
+                </div>
+            </div>
+            
+            <!-- Service 2: Hydra Facial -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80" alt="Hydra Facial">
+                <div class="service-card-overlay">
+                    <span class="service-card-tag">Popular</span>
+                    <h3 class="font-display text-xl font-medium">Hydra Facial</h3>
+                    <p class="text-white/40 text-[12.5px] font-light mt-2 leading-relaxed">More hydrated, bright, plump skin with a clear complexion. Special offer ₹2500.</p>
+                    <div class="service-card-line"></div>
+                </div>
+            </div>
+            
+            <!-- Service 3: Groom Makeup -->
+            <div class="service-card">
+                <img src="https://z-cdn-media.chatglm.cn/files/23315fd9-b695-455e-b927-55b1d9f6115a.jpg?auth_key=1875710830-2969d4c6ddb34086b5517d57f7c55848-0-c26d21f7ab08effc2c1e107bef6d6d16" alt="Groom Makeup">
+                <div class="service-card-overlay">
+                    <span class="service-card-tag">Special</span>
+                    <h3 class="font-display text-xl font-medium">Groom Makeup</h3>
+                    <p class="text-white/40 text-[12.5px] font-light mt-2 leading-relaxed">Bridal & event groom makeup — look your absolute best on your special day.</p>
+                    <div class="service-card-line"></div>
+                </div>
+            </div>
+            
+            <!-- Service 4: Facial & Skincare -->
+            <div class="service-card">
+                <img src="https://z-cdn-media.chatglm.cn/files/1852081f-1e6d-4d22-b11e-faa53a64974e.jpg?auth_key=1875710830-8fa2a16286ca48ef9c640665bc2f90fb-0-88f6d940d5fabb0a4b9c5e499c8ebe90" alt="Facial & Skin Care">
+                <div class="service-card-overlay">
+                    <span class="service-card-tag">Premium</span>
+                    <h3 class="font-display text-xl font-medium">Facial & Skin Care</h3>
+                    <p class="text-white/40 text-[12.5px] font-light mt-2 leading-relaxed">Rejuvenating facials and advanced skincare for a radiant, youthful glow.</p>
+                    <div class="service-card-line"></div>
+                </div>
+            </div>
+            
+            <!-- Service 5: Beard Grooming -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&q=80" alt="Beard Grooming">
+                <div class="service-card-overlay">
+                    <span class="service-card-tag">Gentlemen</span>
+                    <h3 class="font-display text-xl font-medium">Beard Grooming</h3>
+                    <p class="text-white/40 text-[12.5px] font-light mt-2 leading-relaxed">Sculpted shaping, hot towel treatments, and premium beard care.</p>
+                    <div class="service-card-line"></div>
+                </div>
+            </div>
+            
+            <!-- Service 6: Hair Treatment -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="Hair Treatment">
+                <div class="service-card-overlay">
+                    <span class="service-card-tag">Repair</span>
+                    <h3 class="font-display text-xl font-medium">Hair Treatments</h3>
+                    <p class="text-white/40 text-[12.5px] font-light mt-2 leading-relaxed">Keratin, deep conditioning & revitalizing treatments for brilliant hair.</p>
+                    <div class="service-card-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="border-y border-white/[.04] py-14 md:py-20 bg-noir-2/30">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6" data-aos="fade-up">
+            <div class="info-card bg-noir-3/60 border border-white/[.04] rounded-xl p-6 text-center cursor-default">
+                <i data-lucide="shield-check" class="trust-icon w-6 h-6 text-gold/60 mx-auto mb-3"></i>
+                <span class="block text-[13px] text-white/75 font-medium">100% Hygiene</span>
+                <span class="block text-[10px] text-white/30 mt-1">Sterilized tools always</span>
+            </div>
+            <div class="info-card bg-noir-3/60 border border-white/[.04] rounded-xl p-6 text-center cursor-default">
+                <i data-lucide="award" class="trust-icon w-6 h-6 text-gold/60 mx-auto mb-3"></i>
+                <span class="block text-[13px] text-white/75 font-medium">Premium Products</span>
+                <span class="block text-[10px] text-white/30 mt-1">International brands</span>
+            </div>
+            <div class="info-card bg-noir-3/60 border border-white/[.04] rounded-xl p-6 text-center cursor-default">
+                <i data-lucide="users" class="trust-icon w-6 h-6 text-gold/60 mx-auto mb-3"></i>
+                <span class="block text-[13px] text-white/75 font-medium">Expert Stylists</span>
+                <span class="block text-[10px] text-white/30 mt-1">Trained professionals</span>
+            </div>
+            <div class="info-card bg-noir-3/60 border border-white/[.04] rounded-xl p-6 text-center cursor-default">
+                <i data-lucide="heart" class="trust-icon w-6 h-6 text-gold/60 mx-auto mb-3"></i>
+                <span class="block text-[13px] text-white/75 font-medium">Client Satisfaction</span>
+                <span class="block text-[10px] text-white/30 mt-1">4.9★ Google rating</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" class="py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gold/[.015] rounded-full blur-[150px] pointer-events-none"></div>
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 relative z-10">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12" data-aos="fade-up">
+            <div>
+                <span class="text-[10px] tracking-[.28em] uppercase text-gold/70 font-medium">Our Work</span>
+                <h2 class="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight mt-3">Style <span class="italic gold-text">Gallery</span></h2>
+            </div>
+            <a href="https://www.instagram.com/deox.salon_de_beaute/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[11px] text-white/40 hover:text-gold transition-colors tracking-wider uppercase">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                @deox.salon_de_beaute
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            <!-- Signature Cut -->
+            <div class="gal-item col-span-2 row-span-2 aspect-[4/5]" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://z-cdn-media.chatglm.cn/files/81e7a6a2-94e9-44b0-b4ca-473b62a34201.jpg?auth_key=1875710830-4e6aea19374d403b82084e6d67d68bbe-0-c5737eb9c595bfd1ac77159dc5d12bff" alt="Signature Cut">
+                <span class="gal-label">Signature Cut</span>
+            </div>
+            
+            <!-- Our Space / Identity - Using Logo -->
+            <div class="gal-item aspect-square bg-noir-3 flex items-center justify-center" data-aos="fade-up" data-aos-delay="80">
+                <div class="text-center p-4">
+                    <img src="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2" alt="de OX Identity" class="w-16 h-16 mx-auto mb-2 opacity-80">
+                    <span class="gal-label static opacity-100 transform-none">Identity</span>
+                </div>
+            </div>
+            
+            <!-- Hydra Facial -->
+            <div class="gal-item aspect-square" data-aos="fade-up" data-aos-delay="160">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80" alt="Hydra Facial">
+                <span class="gal-label">Hydra Facial</span>
+            </div>
+            
+            <!-- Groom Makeup -->
+            <div class="gal-item aspect-square" data-aos="fade-up" data-aos-delay="240">
+                <img src="https://z-cdn-media.chatglm.cn/files/23315fd9-b695-455e-b927-55b1d9f6115a.jpg?auth_key=1875710830-2969d4c6ddb34086b5517d57f7c55848-0-c26d21f7ab08effc2c1e107bef6d6d16" alt="Groom Makeup">
+                <span class="gal-label">Groom Makeup</span>
+            </div>
+            
+            <!-- Ambience -->
+          
+            
+            <!-- Skin Care -->
+           
+            
+            <!-- Hair Styling -->
+            <div class="gal-item aspect-square" data-aos="fade-up" data-aos-delay="480">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80" alt="Hair Styling">
+                <span class="gal-label">Hair Styling</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews" class="py-20 md:py-32 bg-noir-2/35">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <span class="text-[10px] tracking-[.28em] uppercase text-gold/70 font-medium">Client Love</span>
+            <h2 class="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight mt-3">What They <span class="italic gold-text">Say</span></h2>
+        </div>
+        
+        <div class="relative max-w-2xl mx-auto" style="min-height:220px" data-aos="fade-up" data-aos-delay="150">
+            <div class="testi-item active" data-index="0">
+                <div class="flex justify-center gap-1.5 mb-5">
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                </div>
+                <p class="font-display text-lg md:text-xl text-white/85 italic text-center leading-relaxed mb-5">"Great experience and service. Highly recommended."</p>
+                <p class="text-center text-[12px] text-white/35">— Baseem Zekkariya</p>
+            </div>
+            <div class="testi-item" data-index="1">
+                <div class="flex justify-center gap-1.5 mb-5">
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                </div>
+                <p class="font-display text-lg md:text-xl text-white/85 italic text-center leading-relaxed mb-5">"Wow excellent service 👍"</p>
+                <p class="text-center text-[12px] text-white/35">— Muhammed Ansar</p>
+            </div>
+            <div class="testi-item" data-index="2">
+                <div class="flex justify-center gap-1.5 mb-5">
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                </div>
+                <p class="font-display text-lg md:text-xl text-white/85 italic text-center leading-relaxed mb-5">"Amazing cutting and good hospitality"</p>
+                <p class="text-center text-[12px] text-white/35">— Jaizal</p>
+            </div>
+            <div class="testi-item" data-index="3">
+                <div class="flex justify-center gap-1.5 mb-5">
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                </div>
+                <p class="font-display text-lg md:text-xl text-white/85 italic text-center leading-relaxed mb-5">"Awesome experience."</p>
+                <p class="text-center text-[12px] text-white/35">— myridz Ownvibes</p>
+            </div>
+            <div class="testi-item" data-index="4">
+                <div class="flex justify-center gap-1.5 mb-5">
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+                </div>
+                <p class="font-display text-lg md:text-xl text-white/85 italic text-center leading-relaxed mb-5">"Good service"</p>
+                <p class="text-center text-[12px] text-white/35">— M.A. Rahim</p>
+            </div>
+        </div>
+        
+        <div class="flex justify-center gap-2 mt-8" data-aos="fade-up" data-aos-delay="200">
+            <button class="testi-dot w-8 h-[2px] bg-gold rounded transition-all" data-i="0"></button>
+            <button class="testi-dot w-5 h-[2px] bg-white/15 rounded transition-all" data-i="1"></button>
+            <button class="testi-dot w-5 h-[2px] bg-white/15 rounded transition-all" data-i="2"></button>
+            <button class="testi-dot w-5 h-[2px] bg-white/15 rounded transition-all" data-i="3"></button>
+            <button class="testi-dot w-5 h-[2px] bg-white/15 rounded transition-all" data-i="4"></button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BOOKING ===== -->
+<section id="book" class="py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full bg-gold/[.025] blur-[120px] pointer-events-none"></div>
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-18">
+            <div data-aos="fade-right" data-aos-duration="900">
+                <span class="text-[10px] tracking-[.28em] uppercase text-gold/70 font-medium">Reservation</span>
+                <h2 class="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight mt-3 mb-5">Book Your <span class="italic gold-text">Appointment</span></h2>
+                <p class="text-white/40 text-[14.5px] font-light leading-relaxed mb-9">Reserve your session. Our team is ready to deliver an experience that exceeds expectations.</p>
+                
+                <div class="space-y-4">
+                    <div class="info-card flex items-center gap-4 bg-noir-3 rounded-xl p-4">
+                        <i data-lucide="clock" class="w-5 h-5 text-gold/60 flex-shrink-0"></i>
+                        <span class="text-[13px] text-white/70">Mon – Sun: 9:00 AM – 9:00 PM</span>
+                    </div>
+                    <div class="info-card flex items-center gap-4 bg-noir-3 rounded-xl p-4">
+                        <i data-lucide="phone" class="w-5 h-5 text-gold/60 flex-shrink-0"></i>
+                        <a href="tel:+919846129447" class="text-[13px] text-white/70 hover:text-gold transition-colors">9846 129 447</a>
+                    </div>
+                    <div class="info-card flex items-center gap-4 bg-noir-3 rounded-xl p-4">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-gold/60 flex-shrink-0"></i>
+                        <span class="text-[13px] text-white/70">Opp. Old KSRTC Bus Stand, Pattambi</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+                <form id="bookForm" class="bg-noir-3 border border-white/[.05] rounded-2xl p-7 md:p-8 space-y-5">
+                    <div class="form-field">
+                        <input type="text" id="bName" required placeholder=" ">
+                        <label>Your Name</label>
+                        <span class="error-message">Please enter your name</span>
+                    </div>
+                    <div class="form-field">
+                        <input type="tel" id="bPhone" required placeholder=" ">
+                        <label>Phone Number</label>
+                        <span class="error-message">Please enter valid phone number</span>
+                    </div>
+                    <div class="form-field">
+                        <select id="bService" required>
+                            <option value="" disabled selected></option>
+                            <option value="Haircut & Styling">Haircut & Styling</option>
+                            <option value="Hydra Facial">Hydra Facial</option>
+                            <option value="Groom Makeup">Groom Makeup</option>
+                            <option value="Beard Grooming">Beard Grooming</option>
+                            <option value="Hair Treatments">Hair Treatments</option>
+                            <option value="Facial & Skin Care">Facial & Skin Care</option>
+                            <option value="Hair Colouring">Hair Colouring</option>
+                            <option value="Manicure & Pedicure">Manicure & Pedicure</option>
+                        </select>
+                        <label>Select Service</label>
+                        <span class="error-message">Please select a service</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="form-field">
+                            <input type="date" id="bDate" required placeholder=" " style="color-scheme:dark">
+                            <label>Date</label>
+                            <span class="error-message">Please choose date</span>
+                        </div>
+                        <div class="form-field">
+                            <input type="time" id="bTime" required placeholder=" " style="color-scheme:dark">
+                            <label>Time</label>
+                            <span class="error-message">Please choose time</span>
+                        </div>
+                    </div>
+                    
+                    <!-- PREMIUM CTA BUTTON - PROPER THICKNESS -->
+                    <button type="submit" class="btn-fill w-full rounded-xl text-[12px] uppercase font-bold flex items-center justify-center gap-3 mt-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span>Confirm Booking via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-20 md:py-32 bg-noir-2/35">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <span class="text-[10px] tracking-[.28em] uppercase text-gold/70 font-medium">Get In Touch</span>
+            <h2 class="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight mt-3">Find <span class="italic gold-text">Us</span></h2>
+        </div>
+        
+        <div class="grid lg:grid-cols-5 gap-6">
+            <div class="lg:col-span-3 rounded-2xl overflow-hidden border border-white/[.05] min-h-[350px] lg:min-h-[430px]" data-aos="fade-right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.35!2d76.179582!3d10.8015273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c5fed0c63121%3A0x367170f585dfa02b!2sde%20OX%20salon%20de%20beaute!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;filter:invert(90%) hue-rotate(180deg) brightness(.94) contrast(.91)" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="lg:col-span-2 space-y-4" data-aos="fade-left" data-aos-delay="150">
+                <div class="info-card bg-noir-3 border border-white/[.05] rounded-xl p-5 flex items-start gap-4">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-gold/60 mt-0.5 flex-shrink-0"></i>
+                    <div>
+                        <span class="block text-[13px] text-white/75 font-medium mb-0.5">Location</span>
+                        <span class="block text-[12px] text-white/35 leading-relaxed">Opp. Old KSRTC Bus Stand,<br>Pattambi, Palakkad, Kerala</span>
+                    </div>
+                </div>
+                <div class="info-card bg-noir-3 border border-white/[.05] rounded-xl p-5 flex items-start gap-4">
+                    <i data-lucide="phone" class="w-5 h-5 text-gold/60 mt-0.5 flex-shrink-0"></i>
+                    <div>
+                        <span class="block text-[13px] text-white/75 font-medium mb-0.5">Phone</span>
+                        <a href="tel:+919846129447" class="block text-[12px] text-white/35 hover:text-gold transition-colors">9846 129 447</a>
+                    </div>
+                </div>
+                <div class="info-card bg-noir-3 border border-white/[.05] rounded-xl p-5 flex items-start gap-4">
+                    <i data-lucide="clock" class="w-5 h-5 text-gold/60 mt-0.5 flex-shrink-0"></i>
+                    <div>
+                        <span class="block text-[13px] text-white/75 font-medium mb-0.5">Hours</span>
+                        <span class="block text-[12px] text-white/35">Mon – Sun: <span class="text-gold/60">9 AM – 9 PM</span></span>
+                    </div>
+                </div>
+                <div class="info-card bg-noir-3 border border-white/[.05] rounded-xl p-5 flex items-start gap-4">
+                    <svg class="w-5 h-5 text-pink-400 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    <div>
+                        <span class="block text-[13px] text-white/75 font-medium mb-0.5">Instagram</span>
+                        <a href="https://www.instagram.com/deox.salon_de_beaute/" target="_blank" rel="noopener" class="block text-[12px] text-white/35 hover:text-pink-400 transition-colors">@deox.salon_de_beaute</a>
+                    </div>
+                </div>
+                <a href="https://wa.me/919846129447?text=Hi%20de%20OX%20Salon!" target="_blank" rel="noopener" class="info-card flex items-center gap-4 bg-[#25D366]/[.07] border border-[#25D366]/12 rounded-xl p-5 hover:bg-[#25D366]/[.11] transition-colors group">
+                    <svg class="w-5 h-5 text-[#25D366] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <div>
+                        <span class="block text-[13px] text-white/75 group-hover:text-[#25D366] transition-colors font-medium">Chat on WhatsApp</span>
+                        <span class="block text-[11px] text-white/30">Quick response</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="border-t border-white/[.05]">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 py-13">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="col-span-2 md:col-span-1">
+                <div class="logo-circle inline-flex mb-4">
+                    <img src="https://z-cdn-media.chatglm.cn/files/990fc13b-3ef2-4b41-bda5-707916e67230.png?auth_key=1875712765-181092763ee141f78293b0b673bccaa2-0-f0c949d47e9ccc6365de176281ec08d2" alt="de OX" class="logo-img logo-footer">
+                </div>
+                <p class="text-white/28 text-[11.5px] font-light leading-relaxed max-w-[200px]">Pattambi's premier destination for luxury grooming and beauty services.</p>
+                <div class="flex items-center gap-2.5 mt-5">
+                    <a href="https://www.instagram.com/deox.salon_de_beaute/" target="_blank" rel="noopener" class="w-8 h-8 rounded-full border border-white/[.07] flex items-center justify-center hover:border-pink-400/30 transition-colors">
+                        <svg class="w-3.5 h-3.5 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="https://wa.me/919846129447" target="_blank" rel="noopener" class="w-8 h-8 rounded-full border border-white/[.07] flex items-center justify-center hover:border-[#25D366]/30 transition-colors">
+                        <svg class="w-3.5 h-3.5 text-white/30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+                    <a href="tel:+919846129447" class="w-8 h-8 rounded-full border border-white/[.07] flex items-center justify-center hover:border-gold/30 transition-colors">
+                        <i data-lucide="phone" class="w-3.5 h-3.5 text-white/30"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <span class="text-[9px] tracking-[.2em] uppercase text-gold/55 font-medium block mb-4">Links</span>
+                <div class="space-y-2.5">
+                    <a href="#about" class="block text-[11.5px] text-white/28 hover:text-white/65 transition-colors">About</a>
+                    <a href="#services" class="block text-[11.5px] text-white/28 hover:text-white/65 transition-colors">Services</a>
+                    <a href="#gallery" class="block text-[11.5px] text-white/28 hover:text-white/65 transition-colors">Gallery</a>
+                    <a href="#reviews" class="block text-[11.5px] text-white/28 hover:text-white/65 transition-colors">Reviews</a>
+                    <a href="#book" class="block text-[11.5px] text-white/28 hover:text-white/65 transition-colors">Book Now</a>
+                </div>
+            </div>
+            <div>
+                <span class="text-[9px] tracking-[.2em] uppercase text-gold/55 font-medium block mb-4">Services</span>
+                <div class="space-y-2.5">
+                    <span class="block text-[11.5px] text-white/28">Haircut & Styling</span>
+                    <span class="block text-[11.5px] text-white/28">Hydra Facial</span>
+                    <span class="block text-[11.5px] text-white/28">Groom Makeup</span>
+                    <span class="block text-[11.5px] text-white/28">Beard Grooming</span>
+                    <span class="block text-[11.5px] text-white/28">Hair Colouring</span>
+                    <span class="block text-[11.5px] text-white/28">Skin Care</span>
+                </div>
+            </div>
+            <div>
+                <span class="text-[9px] tracking-[.2em] uppercase text-gold/55 font-medium block mb-4">Contact</span>
+                <div class="space-y-2.5">
+                    <span class="block text-[11.5px] text-white/28 leading-relaxed">Opp. Old KSRTC Bus Stand,<br>Pattambi, Kerala</span>
+                    <a href="tel:+919846129447" class="block text-[11.5px] text-white/28 hover:text-gold transition-colors">9846 129 447</a>
+                    <span class="block text-[11.5px] text-white/28">Daily: <span class="text-gold/45">9AM – 9PM</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-white/[.04] my-9"></div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-[10px] text-white/18">© 2025 de OX — your beauty zone. All rights reserved.</span>
+            <span class="text-[10px] text-white/18">Pattambi, Kerala, India</span>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPPAP ===== -->
+<a href="https://wa.me/919846129447?text=Hi%20de%20OX%20Salon!" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-tooltip">Chat with us 💬</span>
+</a>
+
+<button id="backTop" aria-label="Back to top">
+    <i data-lucide="chevron-up" class="w-4 h-4 text-white/40"></i>
+</button>
+
+<!-- Toast Container -->
+<div id="toasts" class="fixed top-20 right-5 z-[200] flex flex-col gap-2 max-w-sm"></div>
+
+<script>
+// ===== LOADING SCREEN - SIMPLE & ELEGANT =====
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+        setTimeout(() => document.getElementById('loader').remove(), 800);
+    }, 1800);
+});
+
+// ===== INIT =====
+AOS.init({ once:true, offset:70, easing:'ease-out-cubic', duration:750 });
+lucide.createIcons();
+
+// ===== PROGRESS BAR =====
+const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (y / h * 100) + '%';
+}, { passive:true });
+
+// ===== NAV =====
+const nav = document.getElementById('nav');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+let lastY = 0;
+
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 70);
+    nav.style.transform = (y > lastY && y > 500) ? 'translateY(-100%)' : 'translateY(0)';
+    lastY = y;
+    document.getElementById('backTop').classList.toggle('show', y > 600);
+    
+    let cur = '';
+    sections.forEach(s => {
+        if (y >= s.offsetTop - 140 && y < s.offsetTop + s.offsetHeight - 140) cur = s.id;
+    });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('#' + cur || l.href.includes(cur))));
+}, { passive:true });
+
+document.getElementById('backTop').onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+
+// ===== MOBILE MENU =====
+const menuBtn = document.getElementById('menuBtn');
+const panel = document.getElementById('mobilePanel');
+const lines = menuBtn.querySelectorAll('.menu-line');
+let open = false;
+
+menuBtn.onclick = () => {
+    open = !open;
+    if (open) {
+        panel.style.opacity = '1';
+        panel.style.pointerEvents = 'auto';
+        lines[0].style.transform = 'rotate(45deg) translateY(5.5px)';
+        lines[1].style.opacity = '0';
+        lines[2].style.transform = 'rotate(-45deg) translateY(-5.5px)';
+        lines[2].style.width = '20px';
+        document.body.style.overflow = 'hidden';
+    } else closeMenu();
+};
+
+function closeMenu() {
+    open = false;
+    panel.style.opacity = '0';
+    panel.style.pointerEvents = 'none';
+    lines[0].style.transform = '';
+    lines[1].style.opacity = '1';
+    lines[2].style.transform = '';
+    lines[2].style.width = '14px';
+    document.body.style.overflow = '';
+}
+document.querySelectorAll('.mob-link').forEach(l => l.onclick = closeMenu);
+
+// ===== SERVICES SCROLL =====
+const ss = document.getElementById('serviceScroll');
+document.getElementById('servPrev').onclick = () => ss.scrollBy({left:-380,behavior:'smooth'});
+document.getElementById('servNext').onclick = () => ss.scrollBy({left:380,behavior:'smooth'});
+
+// ===== TESTIMONIALS =====
+const testis = document.querySelectorAll('.testi-item');
+const tdots = document.querySelectorAll('.testi-dot');
+let ti = 0, tInt;
+
+function showTi(i) {
+    testis.forEach((t, idx) => t.classList.toggle('active', idx === i));
+    tdots.forEach((d, idx) => {
+        d.style.width = idx === i ? '32px' : '20px';
+        d.className = `testi-dot h-[2px] rounded transition-all ${idx === i ? 'bg-gold' : 'bg-white/15'}`;
+    });
+    ti = i;
+}
+tdots.forEach(d => d.onclick = () => { showTi(+d.dataset.i); resetTi(); });
+
+function startTi() { tInt = setInterval(() => showTi((ti + 1) % testis.length), 4200); }
+function resetTi() { clearInterval(tInt); startTi(); }
+startTi();
+
+// Touch swipe
+let tsx = 0;
+const tw = testis[0]?.parentElement;
+if (tw) {
+    tw.ontouchstart = e => tsx = e.changedTouches[0].screenX;
+    tw.ontouchend = e => {
+        const d = tsx - e.changedTouches[0].screenX;
+        if (Math.abs(d) > 40) { showTi(d > 0 ? (ti+1)%testis.length : (ti-1+testis.length)%testis.length); resetTi(); }
+    };
+}
+
+// ===== FORM VALIDATION =====
+document.getElementById('bookForm').onsubmit = function(e) {
+    e.preventDefault();
+    let ok = true;
+    const fields = [
+        {id:'bName', msg:'Please enter your name', v:x=>x.trim().length>=2},
+        {id:'bPhone', msg:'Enter valid phone', v:x=>/^\d{10}$/.test(x.replace(/\D/g,''))},
+        {id:'bService', msg:'Select a service', v:x=>x!==''},
+        {id:'bDate', msg:'Choose a date', v:x=>x!==''},
+        {id:'bTime', msg:'Choose time', v:x=>x!==''}
+    ];
+    document.querySelectorAll('.form-field').forEach(f => f.classList.remove('error','shake'));
+    fields.forEach(f => {
+        const el = document.getElementById(f.id).parentElement;
+        if (!f.v(document.getElementById(f.id).value)) { el.classList.add('error','shake'); ok=false; setTimeout(()=>el.classList.remove('shake'),450); }
+    });
+    if (!ok) return toast('Please fill all fields correctly', false);
+    
+    const n=document.getElementById('bName').value.trim(), p=document.getElementById('bPhone').value.trim(), s=document.getElementById('bService').value, d=document.getElementById('bDate').value, t=document.getElementById('bTime').value;
+    const fd=new Date(d).toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    const msg=`✨ New Booking Request ✨\n\n👤 Name: ${n}\n📞 Phone: ${p}\n💇 Service: ${s}\n📅 Date: ${fd}\n⏰ Time: ${t}\n\nPlease confirm my appointment. Thank you!`;
+    
+    toast('Opening WhatsApp...', true);
+    setTimeout(() => window.open(`https://wa.me/919846129447?text=${encodeURIComponent(msg)}`,'_blank'), 700);
+    this.reset();
+};
+document.getElementById('bDate').min = new Date().toISOString().split('T')[0];
+document.querySelectorAll('.form-field input,.form-field select').forEach(i => { i.oninput = () => i.parentElement.classList.remove('error'); i.onchange = () => i.parentElement.classList.remove('error'); });
+
+// ===== TOAST =====
+function toast(m, ok) {
+    const c = document.getElementById('toasts'), el = document.createElement('div');
+    el.className = `px-5 py-3.5 rounded-xl text-[12px] font-medium backdrop-blur-xl border ${ok?'bg-gold/10 border-gold/20 text-gold':'bg-red-500/10 border-red-500/20 text-red-400'}`;
+    el.style.animation = 'slideInRight .35s ease,fadeOut .35s ease 2.8s forwards';
+    el.textContent = m;
+    c.appendChild(el);
+    setTimeout(() => el.remove(), 3200);
+}
+
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.onclick = function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t && this.getAttribute('href') !== '#') { e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-74,behavior:'smooth'}); }
+    };
+});
+
+// ===== HERO PARALLAX =====
+const hb = document.querySelector('.hero-bg img');
+if (hb) window.addEventListener('scroll', () => { const y=window.scrollY; if(y<window.innerHeight) hb.style.transform=`translateY(${y*.25}px)`; }, {passive:true});
+</script>
+</body>
+</html>
